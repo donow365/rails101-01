@@ -30,7 +30,7 @@ before_action :find_group_and_check_permission, only: [:edit, :update, :destroy]
   end
 
   def update
-
+    find_group_and_check_permission
 
     if @group.update(group_params)
       redirect_to groups_path, notice: "Update Success"
@@ -40,8 +40,8 @@ before_action :find_group_and_check_permission, only: [:edit, :update, :destroy]
   end
 
 
-  ddef destroy
-  
+  def destroy
+
 
     @group.destroy
     redirect_to groups_path, alert: "Group deleted"
