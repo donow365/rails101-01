@@ -8,6 +8,7 @@ before_action :find_group_and_check_permission, only: [:edit, :update, :destroy]
 
   def show
    @group = Group.find(params[:id])
+   @posts = @group.posts
  end
 
  def edit
@@ -16,7 +17,7 @@ before_action :find_group_and_check_permission, only: [:edit, :update, :destroy]
 
   def new
    @group = Group.new
- end
+   end
 
  def create
     @group = Group.new(group_params)
